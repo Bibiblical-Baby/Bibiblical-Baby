@@ -1,0 +1,794 @@
+/* general selectors */
+
+:root{
+ --clr-primary: aqua;
+ --clr-accent: aquamarine;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-padding: 9%;
+}
+body{
+    background-color: rgb(239, 242, 245);
+    overflow-x: hidden;
+    width: 97%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 97%;
+}
+img{
+    height: 300px;
+}
+
+
+
+/* menu */
+
+.menu{
+    position: relative;
+ }
+ .menu{
+    background-color: black;
+    height: 100vh;
+    position: fixed;
+    width: 79%;
+    /* transition: visibility 1000ms cubic-bezier(0.075, 0.82, 0.165, 1); */
+    font-size: .8em;
+    visibility: hidden;
+    margin-left: auto;
+    top: 0;
+    /* position: relative; */
+    padding-left: 40px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 30px;
+    text-align: left;
+   }
+
+
+
+   /* the hidden text  */
+
+
+
+.hidden-text > h2{
+  writing-mode: vertical-lr;
+  margin-right: 30px;
+  font-size: 2em;
+  color:rgb(225, 216, 218);
+  background-color: blue;
+  letter-spacing: 2px;
+}
+.hidden-text > h3{
+ font-size: 3em;
+ text-shadow: 3px 3px 4px white;
+ color: rgb(46, 13, 153);
+} 
+.hidden-text{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    bottom: 10%;
+    padding: 3rem auto 3rem;
+    flex-direction: row;
+    transform:translateX(95%);
+    transition: transform 500ms ease-out;
+    background: transparent;
+    z-index: 2;
+}
+.hidden-text:hover{
+    /* color: blue; */
+    cursor: grab;
+    transform: translateX(0%);
+    background-color:rgb(246, 251, 252);
+    height: 50%;
+    top: 30%;
+    border-radius: 5%;
+}
+.hidden-text h3::before{
+    content: 'I develop web apps professionaly';
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(27, 142, 12);
+}
+
+
+
+/* navigation bar */
+
+nav ul li:last-child{
+ display: none;
+}
+nav > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background:rgb(238, 237, 243);
+    padding: 25px 0 25px 150px;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+ul{
+    list-style-type: none;
+}
+nav ul > li a{
+    font-weight: bolder;
+    cursor: pointer;
+    color: black;
+    font-size: 1.1rem;
+}
+nav ul > li a:hover{
+    color: blue;
+    transform: scale(1.5);
+}
+nav ul > li a::after{
+    content: '';
+    height: 2px;
+    display: block;
+    transition: transform 500ms ease-in, opacity 500ms ease-in;
+    margin: 1px;
+    transform: scale(0);
+    opacity: 0;
+    text-align: center;
+    background: blue;
+}
+nav ul > li a:hover::after{
+    opacity: .9;
+    transform: scale(1);
+}
+
+
+/* first section i.e introduction */
+
+li > a{
+    text-decoration: none;
+}
+.info{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ /* gap: 20px; */
+ justify-content: center;
+ margin-top: 100px;
+ margin-bottom: 30px;
+ /* background: rgba(118, 11, 82, 0.171); */
+ position: relative;
+ padding-top: 50px;
+ padding-bottom: 50px;
+ margin-left: 10px;
+}
+.info img{
+    clip-path: polygon(100% 0%, 89% 100%, 0% 100%, 0% 0%);
+    z-index: 2;
+    margin-top: 20px;
+}
+h1 > b{
+    font-weight: bolder;
+    color:midnightblue;
+}
+.info > b{
+    align-self: flex-end;
+    position: absolute;
+    bottom: 5%;
+    display: none;
+    right: 10%;
+}
+h1 > div{
+    background-color: darkblue;
+    width: 200%;
+    margin-top: 30px;
+    bottom: 20%;
+    text-align: left;
+    transform: translateX(-5%);
+    color:salmon;
+    z-index: -1;
+    padding-right: 10px;
+}
+
+
+
+/* menu styling */
+
+
+#toggle-menu{
+    cursor:pointer;
+    margin-left: 75%;
+}
+.menu a{
+    text-decoration: none;
+    font-size: 3em;
+    color: white;
+}
+.toggle{
+    visibility: visible;
+}
+i:only-of-type{
+    position: absolute;
+    top: 12px;
+    font-size: 1.5em;
+    right: 20px;
+}
+
+
+
+/* about me section */
+
+.about-me{
+    background-color: rgb(28, 3, 140);
+    background-image: url("/images/1644665380801.jpg");
+    background-size:cover;
+    background-blend-mode:multiply;
+    font-size: 1.7rem;
+    color: white;
+    height: auto;
+    padding: 5rem 0 5rem 1.5rem;
+    background-position: center center;
+}
+.about-me h2{
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2em;
+    transition: all 1000ms ease-in-out;
+}
+.about-me h2:hover{
+ text-decoration: underline;
+}
+.about-me .images{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ margin-top: 30px;
+ padding: 100px;
+}
+.about-me h2 + p{
+    margin-bottom: 200px;
+    text-transform: none;
+}
+.about-me h3{
+    text-align: center;
+    text-decoration:underline;
+    margin: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.about{
+    margin-bottom: 20px;
+    text-transform: none;
+    text-shadow: 1px 1px 2px rgb(219, 216, 184);
+}
+.about-me h5 + h5{
+    text-align: center;
+    background-color: rgb(8, 170, 170);
+    width:fit-content;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+
+/* what i do section */
+
+
+.work{
+    background-color:rgba(64, 3, 48, 0.704);
+    background-image: url("/images/mbp15touch_space_gallery2_201807_GEO_US.0\ \(1\).webp");
+    height: auto;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode:multiply;
+    padding-top: 2rem;
+    color: white;
+    padding-bottom: 4rem;
+    font-size: 1.4em;
+    margin-top: 3em;
+}
+.work a{
+    text-decoration: none;
+}
+.work h3{
+    text-align: center;
+    color:whitesmoke;
+    margin-bottom: 100px;
+    font-size: 3em;
+    font-weight: bold;
+    align-items: center;
+}
+.work h3::after{
+ content: '';
+ height: 2px;
+ background-color: var(--clr-primary);
+ width: 15%;
+ display: block;
+ margin: 0.15em auto 0.5em;
+ opacity: .25;
+}
+.work > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.work > div > h4{
+    margin: 0 10px 0 5px;
+}
+.work > div h4:first-child::before{
+    content: 'design';
+    display: block;
+    font-size: 1.4em;
+    margin-top: -20px;
+    text-align: center;
+}
+.work > div h4:nth-child(2)::before{
+    content: 'website hosting';
+    display: block;
+    font-size: 1.4em;
+    margin-top: -20px;
+    text-align: center;
+}
+.work > div h4:last-child::before{
+    content: 'development';
+    display: block;
+    font-size: 1.4em;
+    margin-top: -20px;
+    text-align: center;
+}
+
+/* hire me section */
+
+
+.hire-me{
+    height: 400px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.hire-me b{
+    font-size: 1.4em;
+    color:brown;
+}
+.hire-me b::before{
+    content: attr(data-title);
+    background-color: brown;
+    font-weight: bolder;
+    font-size: 3rem;
+    width: 200%;
+    color: black;
+    display: block;
+    text-transform: uppercase;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    text-align: left;
+    padding: 10px 0px 10px 50px;
+}
+.hire-me > img{
+    margin-left: 50px;
+    /* clip-path:circle(40%); */
+}
+.hire-me b > a{
+    text-decoration: none;
+}
+
+
+/* my skills section */
+
+.my-skills{
+    background:rgb(31, 5, 101);
+    padding: 5rem;
+    background-image: url("/images/images\ \(3\).jpeg");
+    font-size: 2rem;
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+    background-blend-mode:multiply;
+    padding-bottom: 10rem;
+    margin-bottom: 50px;
+    color: white;
+}
+.my-skills > h3{
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+    margin-bottom: 30px;
+}
+.my-skills > span{
+ text-align: left;
+ text-shadow: 2px 2px 4px white;
+ margin-bottom: 30px;
+}
+.my-skills span + h5{
+    margin: 20px auto 20px;
+}
+.my-skills ul > li{
+    margin: 5px auto 10px;
+    margin-right: 50px;
+}
+.my-skills ul > li::after{
+    content:'';
+    height: 10px;
+    background-color: rgb(34, 9, 146);
+    width: 90%;
+    display: inline-grid;
+    margin-left: 50px;
+}
+
+/* talk to me section */
+
+.talk-to-me{
+    background: rgb(162, 80, 80);
+    padding: 5rem;
+    height: auto;
+    margin-top: 50px;
+    background-image: url("/images/images\ \(4\).jpeg");
+    background-blend-mode: multiply;
+    color: white;
+    background-size: cover;
+}
+.talk-to-me > h1{
+    text-align: center;
+    font-weight: bolder;
+    background:rgb(8, 170, 170);
+    padding: 10px;
+    margin-bottom: 50px;
+    width: 90%;
+}
+.talk-to-me h2{
+    font-weight: bolder;
+    font-size: 2em;
+    margin: 2em auto  30px;
+}
+.talk-to-me b{
+    margin-top: 10px;
+    font-size: 2em;
+    font-weight: bolder;
+}
+.fa-times{
+    font-size: 2em;
+    color: white;
+}
+
+
+
+/* contacts section styling */
+
+
+.contacts{
+    background-color: black;
+    height: auto;
+    padding: 3rem 0 2rem 0;
+    font-size: 2em;
+    margin-top: 5px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.contacts > div{
+    margin-top: 50px;
+}
+.contacts .fab{
+    margin: 18px;
+}
+.contacts h6:only-of-type{
+    position: absolute;
+    font-size: .4em;
+    bottom: 10px;
+    left: 35%;
+}
+
+
+
+
+/* my images section */
+
+.my-images{
+    height: auto;
+    background: rgb(137, 43, 2);
+    background-image: url("/images/download\ \(4\).png");
+    background-size: cover;
+    padding-top: 50px;;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+.my-images > .images{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 1px;
+}
+.my-images .images{
+    overflow: hidden;
+}
+.my-images h1{
+    text-align: center;
+    color: rgb(32, 8, 87);
+    margin-bottom:50px;
+    font-size: 4em;
+}
+.my-images h5{
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+.portfolio__item > img{
+    transition: transform 400ms ease-in-out;
+    height: 200px;
+    width: 330px;
+}
+.portfolio__item{
+    overflow: hidden;
+    background: var(--clr-accent);
+}
+.portfolio__item > img:hover,
+.portfolio__item:focus > img
+{
+  transform: scale(1.3);
+  opacity: .75;
+}
+
+
+/* animation styling classes */
+
+
+.column{
+    opacity: 0;
+    transition: all 500ms ease-in;
+    transform: translateY(-30px);
+} 
+.column.appear{
+    opacity: 1;
+    transform: translateY(0);
+}
+.from-left{
+    transform: translateX(-30%);
+    opacity: 0;
+    transition: opacity 1500ms ease-in-out, transform 1500ms ease-in-out;
+}
+.from-right{
+    transform: translateX(30%);
+    opacity: 0;
+    transition: opacity 1500ms ease-in-out,  1500ms ease-in-out;
+}
+.from-left.slide,
+.from-right.slide{
+    transform: translateX(0);
+    opacity: 1; 
+} 
+
+
+
+
+
+
+/* first media query */
+
+
+@media (max-width: 610px) {
+
+/* general selectors */
+
+    *{
+        word-wrap: break-word;
+        scroll-padding: 10%;
+    }
+    body{
+        /* width: 100%; */
+        /* overflow: hidden; */
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 97%;
+    }
+    div{
+        height: auto;
+        width:auto;
+    }
+
+ /* hidden text styling */
+
+    .hidden-text{
+        display: none;
+    }
+
+
+
+/* what i do section */
+
+    .work{
+        height: auto;
+    }
+
+    h1 > div{
+        width: 15%;
+        padding: 0;
+    }
+    .work > div h4:first-child::before{
+        font-size: 1.3em;
+    }
+    .work > div h4:last-child::before{
+        font-size: 1.3em;
+    }
+    .work > div h4:nth-child(2)::before{
+        font-size: 1.3em;
+    }
+   .work > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 100px;
+   }
+   .work > div > h4{
+    margin: 30px 0 30px 0;
+  }
+  .work h3{
+    font-size: 3em;
+  }
+  .work > h3{
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+/* navigation bar elements */
+
+
+   nav > ul{
+    padding: 15px;
+    position: fixed;
+    top: 0;
+   }
+   nav ul li{
+    display: none;
+   }
+   nav ul li:last-child{
+    display: flex;
+    margin-left: 70%;
+    font-size: 2em;
+   }
+   nav + .info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    /* background: rgba(118, 11, 82, 0.171); */
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 2rem;
+    word-wrap: break-word;
+   }
+   .info h4{
+    align-self: unset;
+    margin: unset;
+    margin-bottom: 10px;
+    font-size: 2em;
+    color:midnightblue;
+    text-transform: unset;
+  }
+  h1 > div{
+    background-color: darkblue;
+    width: 100%;
+    margin-top: 30px;
+    bottom: 20%;
+    text-align: left;
+    transform: translateX(0);
+    color:salmon;
+    z-index: 0;
+    /* position: absolute; */
+    padding-right: 30px;
+ }
+
+
+/* hire me section elements */
+
+
+ .hire-me{
+    height: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+ .hire-me b::before{
+    content: attr(data-title);
+    background-color: brown;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    width: 50%;
+    margin-left: 20%;
+    color: black;
+    border-radius: 1%;
+    display: block;
+    text-transform: uppercase;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 10px 0px 10px 50px;
+ }
+ .hire-me b{
+    margin-bottom: 20px;
+ }
+ .hire-me img{
+    margin-bottom: 20px;
+ }
+
+
+
+
+/* talk to me section */
+
+ .talk-to-me{
+    padding: 5rem 0 5rem;
+ }
+ .talk-to-me h1{
+    text-align: center;
+    padding: 0;
+    margin-left: 2%;
+ }
+
+
+/* my skills elements styling */
+
+ .my-skills{
+    padding: 5rem 0 5rem;
+ }
+ .my-skills > h1{
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(239, 227, 227);
+    margin-bottom: 30px;
+    font-size: 1.1em;
+ }
+ div > div{
+    padding-left:0;
+ }
+
+/* about me section */
+
+
+ .about-me > h2{
+    font-size: 2rem;
+ }
+
+
+/* my images styling */
+
+
+.my-images > .images{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    row-gap: 1px;
+}
+
+
+/* contacts section  */
+
+
+.contacts h6:only-of-type{
+    position: absolute;
+    font-size: .4em;
+    bottom: 10px;
+    left: 20%;
+}
+
+}
+ 
